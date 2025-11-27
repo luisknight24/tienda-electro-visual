@@ -1,0 +1,169 @@
+.contenedor-detalle {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 85vh;
+    /* Evita que sea más alto que la pantalla */
+    position: relative;
+    background: white;
+    overflow: hidden;
+}
+
+/* Diseño Responsive: en PC dos columnas, en móvil una */
+@media (min-width: 768px) {
+    .contenedor-detalle {
+        flex-direction: row;
+        width: 800px;
+        /* Ancho fijo para PC */
+    }
+
+    .columna-imagen {
+        width: 45%;
+        border-right: 1px solid #eee;
+    }
+
+    .columna-info {
+        width: 55%;
+    }
+}
+
+/* --- Columna Izquierda (Imagen) --- */
+.columna-imagen {
+    background: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+}
+
+.imagen-grande {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    transition: transform 0.5s;
+}
+
+.imagen-grande:hover {
+    transform: scale(1.05);
+}
+
+.etiqueta-eficiencia {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Columna Derecha (Info) --- */
+.columna-info {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    color: #666;
+}
+
+.sku {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+h2 {
+    margin: 5px 0 10px 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.precio-grande {
+    font-size: 2rem;
+    color: #3f51b5;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contenido-scroll {
+    flex-grow: 1;
+    /* Ocupa el espacio disponible */
+    overflow-y: auto;
+    /* Scroll solo si es necesario */
+    padding-right: 10px;
+    /* Espacio para scrollbar */
+}
+
+.descripcion-larga {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.seccion-specs h3 {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.seccion-specs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.seccion-specs li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.check-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: #4caf50;
+}
+
+.garantia-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* --- Botones --- */
+.acciones {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-fav {
+    border-color: #ff4081 !important;
+    color: #ff4081 !important;
+}
+
+.btn-fav.activo {
+    background-color: #ff4081 !important;
+    color: white !important;
+}

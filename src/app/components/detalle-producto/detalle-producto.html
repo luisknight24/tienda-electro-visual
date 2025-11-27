@@ -1,0 +1,48 @@
+<div class="contenedor-detalle">
+    <button mat-icon-button class="btn-cerrar" (click)="cerrar()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="columna-imagen">
+        <div class="etiqueta-eficiencia" *ngIf="producto.eficiencia">
+            Energía {{ producto.eficiencia }}
+        </div>
+        <img [src]="producto.imagenUrl" [alt]="producto.nombre" class="imagen-grande">
+    </div>
+
+    <div class="columna-info">
+        <div class="header-info">
+            <span class="sku">SKU: {{ producto.sku || 'N/A' }}</span>
+            <h2 mat-dialog-title>{{ producto.nombre | uppercase }}</h2>
+            <div class="precio-grande">{{ producto.precio | currency:'USD' }}</div>
+        </div>
+
+        <mat-dialog-content class="contenido-scroll">
+            <p class="descripcion-larga">{{ producto.descripcion }}</p>
+
+            <div class="seccion-specs" *ngIf="producto.caracteristicas">
+                <h3>Características Principales:</h3>
+                <ul>
+                    <li *ngFor="let item of producto.caracteristicas">
+                        <mat-icon class="check-icon">check_circle</mat-icon>
+                        {{ item }}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="garantia-badge" *ngIf="producto.garantia">
+                <mat-icon>verified_user</mat-icon>
+                <span>Garantía: {{ producto.garantia }}</span>
+            </div>
+        </mat-dialog-content>
+
+        <mat-dialog-actions align="end" class="acciones">
+            <button mat-stroked-button class="btn-fav" [class.activo]="esFavorito" (click)="toggleFavorito()">
+                <mat-icon>{{ esFavorito ? 'favorite' : 'favorite_border' }}</mat-icon>
+                {{ esFavorito ? 'GUARDADO' : 'AGREGAR A FAVORITOS' }}
+            </button>
+
+            <button mat-flat-button color="primary">SOLICITAR INFO</button>
+        </mat-dialog-actions>
+    </div>
+</div>

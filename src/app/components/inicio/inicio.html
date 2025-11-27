@@ -32,7 +32,7 @@
     </div>
 
     <div class="grilla-productos">
-        <app-tarjeta-producto *ngFor="let item of electrodomesticos" [titulo]="item.nombre"
+        <app-tarjeta-producto *ngFor="let item of electrodomesticos" [producto]="item" [titulo]="item.nombre"
             [descripcion]="item.descripcion" [precio]="item.precio" [imagenUrl]="item.imagenUrl">
         </app-tarjeta-producto>
     </div>

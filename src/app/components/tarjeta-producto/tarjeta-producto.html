@@ -8,7 +8,7 @@
         <span class="precio">{{ precio | currency:'USD':'symbol':'1.0-0' }}</span>
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-button color="primary">VER DETALLES</button>
+        <button mat-button color="primary" (click)="abrirDetalle()">VER DETALLES</button>
         <button mat-icon-button color="warn"><mat-icon>favorite_border</mat-icon></button>
     </mat-card-actions>
 </mat-card>
