@@ -12,6 +12,9 @@ export interface Producto {
   eficiencia?: string;
   garantia?: string;
   sku?: string;
+
+  categoria: string; // 'Linea Blanca', 'Cocina', 'TV', 'Climatización', 'Pequeños'
+  precioOriginal?: number; // Solo si está en oferta (el precio anterior)
 }
 
 @Injectable({
@@ -34,7 +37,9 @@ export class Productos {
         'Dispensador de agua y hielo',
         'Conectividad Wi-Fi con App',
         'Iluminación LED panorámica'
-      ]
+      ],
+      categoria: 'Linea Blanca',
+      precioOriginal: 1000
     },
     {
       id: 2,
@@ -51,7 +56,8 @@ export class Productos {
         'Ciclo de lavado a vapor (Steam)',
         'Puerta de vidrio templado',
         'Diagnóstico inteligente (Smart Diagnosis)'
-      ]
+      ],
+      categoria: 'Linea Blanca'
     },
     {
       id: 3,
@@ -68,7 +74,8 @@ export class Productos {
         'Control por voz integrado',
         'Smart TV con sistema de streaming',
         'Iluminación LED panorámica'
-      ]
+      ],
+      categoria: 'TV'
     },
     {
       id: 4,
@@ -85,7 +92,8 @@ export class Productos {
         'Silencioso',
         'Modo Eco',
         'Conectividad Wi-Fi'
-      ]
+      ],
+      categoria: 'Climatización'
     },
     {
       id: 5,
@@ -102,7 +110,8 @@ export class Productos {
         'Espumador de leche',
         'Molinillo',
         'Conectividad Wi-Fi'
-      ]
+      ],
+      categoria: 'Cocina'
     },
     {
       id: 6,
@@ -119,7 +128,8 @@ export class Productos {
         'Descongelado rápido',
         'Cerámica interior',
         'Conectividad Wi-Fi'
-      ]
+      ],
+      categoria: 'Cocina'
     }
   ];
 
