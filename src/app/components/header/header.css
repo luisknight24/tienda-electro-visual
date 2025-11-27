@@ -1,0 +1,59 @@
+:host {
+    --color-primario: #3f51b5;
+    /* --color-acento: #ff4081; */
+    --color-acento: #555555;
+}
+
+.barra-navegacion {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    color: #333;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 0 24px;
+}
+
+.logo-texto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    margin-left: 5px;
+}
+
+.espaciador {
+    flex: 1 1 auto;
+}
+
+.menu-escritorio {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .menu-escritorio {
+        display: flex;
+        gap: 8px;
+    }
+}
+
+.menu-escritorio button {
+    font-weight: 500;
+    color: #555;
+}
+
+.menu-escritorio button:hover {
+    background-color: rgba(63, 81, 181, 0.05);
+    color: var(--color-primario);
+}
+
+.boton-favoritos {
+    color: var(--color-acento);
+    transition: transform 0.2s ease;
+}
+
+.boton-favoritos:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 64, 129, 0.1);
+}

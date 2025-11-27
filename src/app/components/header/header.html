@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="barra-navegacion">
+    <!-- <button mat-icon-button (click)="irAInicio()"><mat-icon>menu</mat-icon></button> -->
+
+    <span class="logo-texto" (click)="irAInicio()" style="cursor: pointer;">ElectroHogar</span>
+
+    <span class="espaciador"></span>
+
+    <div class="menu-escritorio">
+        <button mat-button (click)="irAInicio()">Inicio</button>
+        <button mat-button>Ofertas</button>
+        <button mat-button>Categorías</button>
+    </div>
+
+    <button mat-icon-button class="boton-favoritos" (click)="irAFavoritos()">
+        <mat-icon [matBadge]="cantidadFavoritos" matBadgeColor="warn" [matBadgeHidden]="cantidadFavoritos === 0">
+            favorite
+        </mat-icon>
+    </button>
+
+    <button mat-icon-button><mat-icon>account_circle</mat-icon></button>
+</mat-toolbar>

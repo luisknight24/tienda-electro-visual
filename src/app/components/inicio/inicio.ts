@@ -7,11 +7,12 @@ import { CommonModule } from '@angular/common';
 import { TarjetaProducto } from '../tarjeta-producto/tarjeta-producto';
 import { Producto, Productos } from '../../services/productos';
 import { Favoritos } from '../../services/favoritos';
+import { Header } from '../header/header';
 
 
 @Component({
   selector: 'app-inicio',
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule, CommonModule, TarjetaProducto, MatBadgeModule],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule, CommonModule, TarjetaProducto, MatBadgeModule, Header],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })
