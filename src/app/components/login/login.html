@@ -22,7 +22,7 @@
                             <mat-label>Contraseña</mat-label>
                             <input matInput type="password">
                             <mat-icon matSuffix>lock</mat-icon>
-                        </mat-form-field>
+ </mat-form-field>
 
                         <button mat-flat-button color="primary" class="boton-grande" (click)="ingresar()">
                             INICIAR SESIÓN
@@ -30,28 +30,53 @@
                     </form>
                 </mat-tab>
 
-                <mat-tab label="Registrarse">
-                    <form class="formulario-auth">
-                        <mat-form-field appearance="outline" class="ancho-total">
-                            <mat-label>Nombre Completo</mat-label>
-                            <input matInput type="text">
-                        </mat-form-field>
+<mat-tab label="Registrarse">
+  <form class="formulario-auth grid-2">
 
-                        <mat-form-field appearance="outline" class="ancho-total">
-                            <mat-label>Correo Electrónico</mat-label>
-                            <input matInput type="email">
-                        </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre Completo</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
 
-                        <mat-form-field appearance="outline" class="ancho-total">
-                            <mat-label>Crear Contraseña</mat-label>
-                            <input matInput type="password">
-                        </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput type="email">
+    </mat-form-field>
 
-                        <button mat-stroked-button color="accent" class="boton-grande">
-                            CREAR CUENTA
-                        </button>
-                    </form>
-                </mat-tab>
+    <mat-form-field appearance="outline">
+      <mat-label>Dirección</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Teléfono</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+
+    <!-- Contraseña ocupa toda la fila -->
+    <mat-form-field appearance="outline" class="col-span-2">
+      <mat-label>Crear Contraseña</mat-label>
+      <input matInput type="password">
+    </mat-form-field>
+    
+
+        <!-- Contraseña ocupa toda la fila -->
+    <mat-form-field appearance="outline" class="col-span-2">
+      <mat-label>Repetir Contraseña</mat-label>
+      <input matInput type="password">
+    </mat-form-field>
+    
+
+    <button mat-stroked-button 
+            color="accent" 
+            class="boton-grande col-span-2">
+      CREAR CUENTA
+    </button>
+
+  </form>
+</mat-tab>
+
+
 
             </mat-tab-group>
         </mat-card-content>

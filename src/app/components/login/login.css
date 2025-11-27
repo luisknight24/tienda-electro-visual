@@ -5,6 +5,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    
 }
 
 .fondo-imagen {
@@ -34,6 +35,9 @@
         align-items: center;
         margin-bottom: 20px;
     }
+      width: 560px;   /* antes suele ser 350–400 */
+  max-width: 90%;
+
 }
 
 .formulario-auth {
@@ -41,6 +45,7 @@
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
+    
 }
 
 .ancho-total {
@@ -51,4 +56,28 @@
     width: 100%;
     padding: 24px 0;
     font-size: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.grid-2 mat-form-field {
+  width: 100%;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .col-span-2 {
+    grid-column: span 1;
+  }
 }
