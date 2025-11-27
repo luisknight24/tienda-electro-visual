@@ -34,6 +34,32 @@
                 <mat-icon>verified_user</mat-icon>
                 <span>Garantía: {{ producto.garantia }}</span>
             </div>
+
+            <div class="calculadora-credito">
+                <div class="titulo-calc">
+                    <mat-icon>calculate</mat-icon>
+                    <span>Calcula tu crédito</span>
+                </div>
+                <p class="label-meses">Selecciona el plazo:</p>
+                <mat-chip-listbox aria-label="Selección de plazos">
+                    <mat-chip-option *ngFor="let mes of plazos" [selected]="mes === plazoSeleccionado"
+                        (click)="calcularCuota(mes)" color="accent">
+                        {{ mes }} Meses
+                    </mat-chip-option>
+                </mat-chip-listbox>
+                <div class="resultado-cuota">
+                    <div class="texto-cuota">
+                        <span class="meses-big">{{ plazoSeleccionado }}</span>
+                        <span class="text-small">cuotas de</span>
+                    </div>
+                    <div class="valor-big">
+                        {{ valorCuota | currency:'USD':'symbol':'1.2-2' }}
+                    </div>
+                </div>
+                <div class="total-info">
+                    Total a pagar (inc. intereses): {{ totalFinal | currency:'USD' }}
+                </div>
+            </div>
         </mat-dialog-content>
 
         <mat-dialog-actions align="end" class="acciones">
