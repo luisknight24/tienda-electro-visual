@@ -11,7 +11,9 @@
     </div>
 
     <button mat-icon-button class="boton-favoritos" (click)="verFavoritos()">
-        <mat-icon>favorite</mat-icon>
+        <mat-icon [matBadge]="cantidadFavoritos" matBadgeColor="warn" [matBadgeHidden]="cantidadFavoritos === 0">
+            favorite
+        </mat-icon>
     </button>
     <button mat-icon-button><mat-icon>account_circle</mat-icon></button>
 </mat-toolbar>

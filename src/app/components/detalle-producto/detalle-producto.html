@@ -37,9 +37,12 @@
         </mat-dialog-content>
 
         <mat-dialog-actions align="end" class="acciones">
-            <button mat-stroked-button class="btn-fav" [class.activo]="esFavorito" (click)="toggleFavorito()">
-                <mat-icon>{{ esFavorito ? 'favorite' : 'favorite_border' }}</mat-icon>
-                {{ esFavorito ? 'GUARDADO' : 'AGREGAR A FAVORITOS' }}
+            <button mat-stroked-button class="btn-fav" [class.activo]="favoritosService.esFavorito(producto.id)"
+                (click)="toggleFavorito()">
+                <mat-icon>
+                    {{ favoritosService.esFavorito(producto.id) ? 'favorite' : 'favorite_border' }}
+                </mat-icon>
+                {{ favoritosService.esFavorito(producto.id) ? 'GUARDADO' : 'AGREGAR A FAVORITOS' }}
             </button>
 
             <button mat-flat-button color="primary">SOLICITAR INFO</button>

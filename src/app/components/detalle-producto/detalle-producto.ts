@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Producto } from '../../services/productos';
+import { Favoritos } from '../../services/favoritos';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -16,7 +17,8 @@ export class DetalleProducto {
 
   constructor(
     public dialogRef: MatDialogRef<DetalleProducto>,
-    @Inject(MAT_DIALOG_DATA) public producto: Producto
+    @Inject(MAT_DIALOG_DATA) public producto: Producto,
+    public favoritosService: Favoritos // <--- Inyectar servicio
   ) { }
 
   cerrar(): void {
@@ -24,7 +26,6 @@ export class DetalleProducto {
   }
 
   toggleFavorito(): void {
-    this.esFavorito = !this.esFavorito;
-    // Aquí podrías llamar a un servicio para guardar la preferencia
+    this.favoritosService.toggleFavorito(this.producto);
   }
 }
