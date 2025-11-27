@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" class="barra-navegacion">
+    <button mat-icon-button><mat-icon>menu</mat-icon></button>
+    <span class="logo-texto">ElectroHogar</span>
+
+    <span class="espaciador"></span>
+
+    <div class="menu-escritorio">
+        <button mat-button>Inicio</button>
+        <button mat-button>Ofertas</button>
+        <button mat-button>Categorías</button>
+    </div>
+
+    <button mat-icon-button class="boton-favoritos" (click)="verFavoritos()">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button><mat-icon>account_circle</mat-icon></button>
+</mat-toolbar>
+
+<header class="banner-principal">
+    <div class="contenido-banner">
+        <h1>Renueva tu hogar hoy</h1>
+        <p>Descubre nuestra nueva colección de línea blanca.</p>
+        <button mat-raised-button color="accent" class="boton-banner">VER CATÁLOGO</button>
+    </div>
+</header>
+
+<main class="contenedor-principal">
+    <h2 class="titulo-seccion">Nuevos Ingresos</h2>
+
+    <div *ngIf="electrodomesticos.length === 0" class="mensaje-vacio">
+        <p>Cargando productos...</p>
+    </div>
+
+    <div class="grilla-productos">
+        <app-tarjeta-producto *ngFor="let item of electrodomesticos" [titulo]="item.nombre"
+            [descripcion]="item.descripcion" [precio]="item.precio" [imagenUrl]="item.imagenUrl">
+        </app-tarjeta-producto>
+    </div>
+</main>

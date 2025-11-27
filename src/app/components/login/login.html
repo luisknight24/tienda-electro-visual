@@ -1,0 +1,59 @@
+<div class="contenedor-login">
+    <div class="fondo-imagen"></div>
+
+    <mat-card class="tarjeta-login">
+        <mat-card-header class="encabezado-login">
+            <mat-card-title>ElectroHogar</mat-card-title>
+            <mat-card-subtitle>Tecnología para tu vida</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+
+                <mat-tab label="Ingresar">
+                    <form class="formulario-auth">
+                        <mat-form-field appearance="outline" class="ancho-total">
+                            <mat-label>Correo Electrónico</mat-label>
+                            <input matInput placeholder="usuario@ejemplo.com" type="email">
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="ancho-total">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput type="password">
+                            <mat-icon matSuffix>lock</mat-icon>
+                        </mat-form-field>
+
+                        <button mat-flat-button color="primary" class="boton-grande" (click)="ingresar()">
+                            INICIAR SESIÓN
+                        </button>
+                    </form>
+                </mat-tab>
+
+                <mat-tab label="Registrarse">
+                    <form class="formulario-auth">
+                        <mat-form-field appearance="outline" class="ancho-total">
+                            <mat-label>Nombre Completo</mat-label>
+                            <input matInput type="text">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="ancho-total">
+                            <mat-label>Correo Electrónico</mat-label>
+                            <input matInput type="email">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="ancho-total">
+                            <mat-label>Crear Contraseña</mat-label>
+                            <input matInput type="password">
+                        </mat-form-field>
+
+                        <button mat-stroked-button color="accent" class="boton-grande">
+                            CREAR CUENTA
+                        </button>
+                    </form>
+                </mat-tab>
+
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>

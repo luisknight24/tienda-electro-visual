@@ -1,0 +1,179 @@
+/* --- Barra de Navegación --- */
+.barra-navegacion {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    color: #333;
+    box-shadow: var(--sombra-suave);
+    padding: 0 24px;
+}
+
+.logo-texto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    letter-spacing: -0.5px;
+    margin-left: 12px;
+}
+
+.espaciador {
+    flex: 1 1 auto;
+}
+
+/* Menú Escritorio */
+.menu-escritorio {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .menu-escritorio {
+        display: flex;
+        gap: 8px;
+    }
+}
+
+.menu-escritorio button {
+    font-weight: 500;
+    color: #555;
+}
+
+.menu-escritorio button:hover {
+    background-color: rgba(63, 81, 181, 0.05);
+    color: var(--color-primario);
+}
+
+/* --- Banner Principal --- */
+.banner-principal {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, rgba(63, 81, 181, 0.85) 0%, rgba(63, 81, 181, 0.4) 100%),
+        url('/img/electrohogar.png') no-repeat center center;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.contenido-banner {
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.contenido-banner h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .contenido-banner h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.contenido-banner p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.boton-banner {
+    padding: 8px 32px !important;
+    font-size: 1.1rem !important;
+    font-weight: bold;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+    transition: transform 0.2s;
+}
+
+.boton-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 64, 129, 0.6);
+}
+
+.boton-favoritos {
+    color: var(--color-acento);
+    transition: transform 0.2s ease;
+}
+
+.boton-favoritos:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 64, 129, 0.1);
+}
+
+/* --- Contenedor Principal --- */
+.contenedor-principal {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+.titulo-seccion {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #1a1a1a;
+    position: relative;
+    font-weight: 700;
+}
+
+.titulo-seccion::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-primario), var(--color-acento));
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+}
+
+/* --- Grilla de Productos (SOLO ESTRUCTURA) --- */
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

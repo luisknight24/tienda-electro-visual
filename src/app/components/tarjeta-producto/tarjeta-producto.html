@@ -1,0 +1,14 @@
+<mat-card class="tarjeta-electro">
+    <div class="contenedor-imagen">
+        <img [src]="imagenUrl" [alt]="titulo" class="imagen-producto">
+    </div>
+    <mat-card-content class="contenido">
+        <h3 class="titulo">{{ titulo | uppercase }}</h3>
+        <p class="descripcion">{{ descripcion }}</p>
+        <span class="precio">{{ precio | currency:'USD':'symbol':'1.0-0' }}</span>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-button color="primary">VER DETALLES</button>
+        <button mat-icon-button color="warn"><mat-icon>favorite_border</mat-icon></button>
+    </mat-card-actions>
+</mat-card>
