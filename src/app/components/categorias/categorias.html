@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<main class="contenedor-categorias">
+
+    <div class="encabezado-cat">
+        <h2>Explora por Categorías</h2>
+        <p>Encuentra exactamente lo que necesitas para tu hogar.</p>
+    </div>
+
+    <div class="barra-filtros">
+        <div class="scroll-container">
+            <button *ngFor="let cat of categorias" class="chip-categoria" [class.activo]="cat === categoriaSeleccionada"
+                (click)="filtrar(cat)" matRipple>
+                <mat-icon>{{ getIcono(cat) }}</mat-icon>
+                <span>{{ cat }}</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="grilla-productos">
+        <app-tarjeta-producto *ngFor="let item of productosFiltrados" [producto]="item" [titulo]="item.nombre"
+            [descripcion]="item.descripcion" [precio]="item.precio" [imagenUrl]="item.imagenUrl">
+        </app-tarjeta-producto>
+    </div>
+
+    <div *ngIf="productosFiltrados.length === 0" class="sin-resultados">
+        <p>No se encontraron productos en esta categoría.</p>
+    </div>
+
+</main>

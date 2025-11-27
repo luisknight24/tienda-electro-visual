@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<main class="contenedor-ofertas">
+    <div class="banner-ofertas">
+        <h1>🔥 Ofertas Relámpago 🔥</h1>
+        <p>Precios bajos por tiempo limitado. ¡Aprovecha ahora!</p>
+    </div>
+
+    <div *ngIf="productosOferta.length === 0" class="sin-ofertas">
+        <p>Por el momento no hay promociones activas.</p>
+        <button mat-stroked-button (click)="irAlCatalogo()">Ver todo el catálogo</button>
+    </div>
+
+    <div class="grilla-productos">
+        <app-tarjeta-producto *ngFor="let item of productosOferta" [producto]="item" [titulo]="item.nombre"
+            [descripcion]="item.descripcion" [precio]="item.precio" [imagenUrl]="item.imagenUrl">
+        </app-tarjeta-producto>
+    </div>
+</main>

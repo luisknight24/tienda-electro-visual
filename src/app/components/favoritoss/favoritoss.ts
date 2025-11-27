@@ -32,6 +32,6 @@ export class Favoritoss implements OnInit {
   }
 
   irAlCatalogo() {
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/catalogo']);
   }
 }

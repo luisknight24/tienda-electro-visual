@@ -1,0 +1,119 @@
+.contenedor-categorias {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.encabezado-cat {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.encabezado-cat h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.encabezado-cat p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* --- BARRA DE FILTROS --- */
+.barra-filtros {
+    display: flex;
+    justify-content: center;
+    /* Centrado en escritorio */
+    margin-bottom: 50px;
+    position: sticky;
+    /* Opcional: Para que se pegue al bajar */
+    top: 80px;
+    /* Ajustar según la altura de tu header */
+    z-index: 90;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    /* Permite scroll en móviles */
+    padding: 10px 20px;
+    /* Ocultar barra de scroll fea pero permitir scroll */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Diseño del Botón (Chip) */
+.chip-categoria {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 50px;
+    /* Bordes totalmente redondos */
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    /* Evita que el texto se parta */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.chip-categoria mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Efecto Hover */
+.chip-categoria:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #bdbdbd;
+}
+
+/* ESTADO ACTIVO (Seleccionado) */
+.chip-categoria.activo {
+    background-color: #3f51b5;
+    /* Color Primario */
+    color: white;
+    border-color: #3f51b5;
+    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.4);
+}
+
+/* --- GRILLA --- */
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    animation: fadeIn 0.4s ease-out;
+    /* Animación al filtrar */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sin-resultados {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}

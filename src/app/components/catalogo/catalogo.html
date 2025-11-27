@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<main class="contenedor-catalogo">
+    <div class="encabezado-catalogo">
+        <h2>Catálogo Completo</h2>
+        <p>Explora nuestra selección de productos.</p>
+    </div>
+
+    <div class="grilla-productos">
+        <app-tarjeta-producto *ngFor="let item of todosLosProductos" [producto]="item" [titulo]="item.nombre"
+            [descripcion]="item.descripcion" [precio]="item.precio" [imagenUrl]="item.imagenUrl">
+        </app-tarjeta-producto>
+    </div>
+</main>

@@ -1,11 +1,20 @@
 <mat-card class="tarjeta-electro">
     <div class="contenedor-imagen">
-        <img [src]="imagenUrl" [alt]="titulo" class="imagen-producto">
+        <div class="badge-oferta" *ngIf="producto.precioOriginal">OFERTA</div>
+
+        <img [src]="producto.imagenUrl" [alt]="producto.nombre" class="imagen-producto">
     </div>
     <mat-card-content class="contenido">
         <h3 class="titulo">{{ titulo | uppercase }}</h3>
         <p class="descripcion">{{ descripcion }}</p>
-        <span class="precio">{{ precio | currency:'USD':'symbol':'1.0-0' }}</span>
+        <div class="contenedor-precio">
+            <span class="precio-viejo" *ngIf="producto.precioOriginal">
+                {{ producto.precioOriginal | currency:'USD':'symbol':'1.0-0' }}
+            </span>
+            <span class="precio" [class.precio-oferta]="producto.precioOriginal">
+                {{ producto.precio | currency:'USD':'symbol':'1.0-0' }}
+            </span>
+        </div>
     </mat-card-content>
     <mat-card-actions align="end">
         <button mat-button color="primary" (click)="abrirDetalle()">VER DETALLES</button>

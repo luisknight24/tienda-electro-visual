@@ -12,9 +12,22 @@
 
     <div class="columna-info">
         <div class="header-info">
-            <span class="sku">SKU: {{ producto.sku || 'N/A' }}</span>
+            <div class="fila-superior">
+                <span class="sku">SKU: {{ producto.sku || 'N/A' }}</span>
+                <span class="etiqueta-oferta-modal" *ngIf="producto.precioOriginal">¡OFERTA ESPECIAL!</span>
+            </div>
+
             <h2 mat-dialog-title>{{ producto.nombre | uppercase }}</h2>
-            <div class="precio-grande">{{ producto.precio | currency:'USD' }}</div>
+
+            <div class="contenedor-precios-detalle">
+                <span class="precio-antiguo" *ngIf="producto.precioOriginal">
+                    Antes: {{ producto.precioOriginal | currency:'USD':'symbol':'1.0-0' }}
+                </span>
+
+                <div class="precio-grande" [class.texto-rojo]="producto.precioOriginal">
+                    {{ producto.precio | currency:'USD' }}
+                </div>
+            </div>
         </div>
 
         <mat-dialog-content class="contenido-scroll">

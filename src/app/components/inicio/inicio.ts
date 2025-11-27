@@ -8,11 +8,12 @@ import { TarjetaProducto } from '../tarjeta-producto/tarjeta-producto';
 import { Producto, Productos } from '../../services/productos';
 import { Favoritos } from '../../services/favoritos';
 import { Header } from '../header/header';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-inicio',
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule, CommonModule, TarjetaProducto, MatBadgeModule, Header],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule, CommonModule, TarjetaProducto, MatBadgeModule, Header, RouterLink],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })
@@ -33,7 +34,7 @@ export class Inicio implements OnInit {
   }
 
   cargarProductos(): void {
-    this.electrodomesticos = this._productosService.obtenerTodos();
+    this.electrodomesticos = this._productosService.obtenerDestacados();
   }
 
   verFavoritos() {

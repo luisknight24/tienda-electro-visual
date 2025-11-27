@@ -32,4 +32,16 @@ export class Header {
   irAFavoritos() {
     this.router.navigate(['/favoritoss']);
   }
+
+  irAOfertas() {
+    this.router.navigate(['/ofertas']);
+  }
+
+  irACategorias() {
+    this.router.navigate(['/categorias']);
+  }
+
+  irACatalogo() {
+    this.router.navigate(['/catalogo']);
+  }
 }

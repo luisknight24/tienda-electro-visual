@@ -245,3 +245,59 @@ mat-chip-listbox {
 }
 
 /* Nuevos estilos */
+/* Fila para alinear SKU y Etiqueta */
+.fila-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Etiqueta roja brillante */
+.etiqueta-oferta-modal {
+    background-color: #d32f2f;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(211, 47, 47, 0.3);
+    animation: palpitar 2s infinite;
+    /* Animación para llamar la atención */
+}
+
+/* Contenedor para poner precio viejo arriba del nuevo */
+.contenedor-precios-detalle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.precio-antiguo {
+    text-decoration: line-through;
+    color: #757575;
+    font-size: 1rem;
+    /* margin-bottom: 5px; */
+    /* Pegarlo un poco al precio nuevo */
+}
+
+/* Clase para cambiar el color del precio grande si es oferta */
+.texto-rojo {
+    color: #d32f2f !important;
+}
+
+/* Animación suave */
+@keyframes palpitar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

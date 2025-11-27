@@ -97,3 +97,42 @@ mat-card-actions {
     justify-content: space-between;
     align-items: center;
 }
+
+/* Badge Roja */
+.badge-oferta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #d32f2f;
+    /* Rojo fuerte */
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de precios para alinearlos */
+.contenedor-precio {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* Estilo tachado */
+.precio-viejo {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Si es oferta, el precio nuevo resalta más */
+.precio-oferta {
+    color: #d32f2f !important;
+    /* Rojo oferta */
+    font-size: 1.4rem;
+    /* Un poco más grande */
+}

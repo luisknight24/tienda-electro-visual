@@ -1,0 +1,39 @@
+.contenedor-ofertas {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 24px 60px;
+}
+
+.banner-ofertas {
+    background: linear-gradient(135deg, #d32f2f, #ff5252);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(211, 47, 47, 0.4);
+}
+
+.banner-ofertas h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.banner-ofertas p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.sin-ofertas {
+    text-align: center;
+    padding: 50px;
+    color: #666;
+}
