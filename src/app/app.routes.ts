@@ -5,6 +5,7 @@ import { Favoritoss } from './components/favoritoss/favoritoss';
 import { Catalogo } from './components/catalogo/catalogo';
 import { Ofertas } from './components/ofertas/ofertas';
 import { Categorias } from './components/categorias/categorias';
+import { Perfil } from './components/perfil/perfil';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path: 'catalogo', component: Catalogo },
     { path: 'ofertas', component: Ofertas },
     { path: 'categorias', component: Categorias },
+    { path: 'perfil', component: Perfil },
     { path: '**', redirectTo: 'login' }
 ];

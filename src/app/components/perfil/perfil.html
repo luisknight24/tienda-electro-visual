@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="contenedor-perfil">
+    <mat-card class="tarjeta-perfil">
+        <div class="header-perfil">
+            <div class="avatar-grande">
+                <mat-icon>person</mat-icon>
+            </div>
+            <h2>Mi Información Personal</h2>
+            <p>Actualiza tus datos para futuros envíos.</p>
+        </div>
+
+        <form class="formulario-perfil">
+            <div class="grid-form">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre Completo</mat-label>
+                    <input matInput [(ngModel)]="datosUsuario.nombre" name="nombre">
+                    <mat-icon matSuffix>badge</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput [(ngModel)]="datosUsuario.email" name="email" readonly> <mat-icon
+                        matSuffix>email</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput [(ngModel)]="datosUsuario.telefono" name="telefono">
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Dirección de Envío</mat-label>
+                    <input matInput [(ngModel)]="datosUsuario.direccion" name="direccion">
+                    <mat-icon matSuffix>home</mat-icon>
+                </mat-form-field>
+
+            </div>
+
+            <div class="acciones">
+                <button mat-flat-button color="primary" class="btn-guardar" (click)="guardarCambios()">
+                    GUARDAR CAMBIOS
+                </button>
+            </div>
+        </form>
+    </mat-card>
+</div>

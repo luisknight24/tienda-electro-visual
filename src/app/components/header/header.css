@@ -57,3 +57,31 @@
     transform: scale(1.2);
     background-color: rgba(255, 64, 129, 0.1);
 }
+
+.avatar-header {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -4px;
+}
+
+/* Estilo dentro del menú */
+.info-menu {
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+    outline: none;
+}
+
+.nombre-menu {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.email-menu {
+    font-size: 0.8rem;
+    color: #666;
+}

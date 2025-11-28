@@ -1,0 +1,59 @@
+.contenedor-perfil {
+    background-color: #f5f7fa;
+    min-height: 90vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta-perfil {
+    width: 100%;
+    max-width: 800px;
+    /* Más ancho que el login */
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.header-perfil {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.avatar-grande {
+    background: #e3f2fd;
+    color: #1565c0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.avatar-grande mat-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+/* GRID SYSTEM (Para replicar tu login) */
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Móvil: 1 columna */
+    gap: 16px;
+}
+
+@media (min-width: 600px) {
+    .grid-form {
+        grid-template-columns: 1fr 1fr;
+        /* PC: 2 columnas */
+    }
+}
+
+.btn-guardar {
+    width: 100%;
+    padding: 24px 0;
+    font-size: 1.1rem;
+}

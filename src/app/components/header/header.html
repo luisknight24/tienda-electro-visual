@@ -18,5 +18,33 @@
         </mat-icon>
     </button>
 
-    <button mat-icon-button><mat-icon>account_circle</mat-icon></button>
+    <button mat-icon-button (click)="!usuario ? manejarClickUsuario() : null"
+        [matMenuTriggerFor]="usuario ? menuUsuario : null">
+
+        <img *ngIf="usuario && usuario.avatarUrl" [src]="usuario.avatarUrl" class="avatar-header">
+        <mat-icon *ngIf="!usuario || !usuario.avatarUrl">account_circle</mat-icon>
+
+    </button>
+
+    <mat-menu #menuUsuario="matMenu" xPosition="before">
+        <div class="info-menu" *ngIf="usuario">
+            <span class="nombre-menu">{{ usuario.nombre }}</span>
+            <span class="email-menu">{{ usuario.email }}</span>
+        </div>
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item (click)="irAPerfil()">
+            <mat-icon>person</mat-icon>
+            <span>Mi Perfil</span>
+        </button>
+        <!-- <button mat-menu-item>
+            <mat-icon>shopping_bag</mat-icon>
+            <span>Mis Pedidos</span>
+        </button> -->
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="cerrarSesion()">
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesión</span>
+        </button>
+    </mat-menu>
 </mat-toolbar>
